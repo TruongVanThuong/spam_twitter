@@ -1,0 +1,87 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <button class="scrap_btn"type="button" >Get follow </button>
+        <button class="scrap_btn_api"type="button">DUNG API KHAC</button>
+    </body>
+    <script>
+        $('.scrap_btn').click(function() {
+            get_follow("batdau"); 
+  });
+  $('.scrap_btn_api').click(function() {
+    get_api(); 
+  });  
+           
+function get_api()
+{
+    $.ajax({
+        url: 'https://stevesie.com/cloud/api/v1/endpoints/13b37901-eba4-45bd-aaac-08eabba1054d/executions',
+        type: 'POST',
+        async: false,
+        cache: false,
+        timeout: 30000,
+        data: "Token: c45ad934-36bd-4836-aae2-ef83415624ce",
+        contentType: "application/json",
+
+        fail: function(){
+            return true;
+        },
+        success: function(msg)
+        {
+            console.log(msg);
+            var id = msg.replace(/[^0-9]/g, '');
+            if (id != null)
+            {
+                console.log("repeart : " + id);
+                get_follow(id);
+            }
+
+        },
+        done: function(msg){ 
+            alert("Đã xong");
+            if (parseFloat(msg)){
+                return false;
+            } else {
+                return true;
+            }
+        }
+    });
+}
+
+
+function get_follow(id_cursor){
+$.ajax({
+        url: 'scrap_follower.php',
+        type: 'POST',
+        async: false,
+        cache: false,
+        timeout: 30000,
+        data: "next_cursor="+id_cursor,
+        fail: function(){
+            return true;
+        },
+        success: function(msg)
+        {
+            console.log(msg);
+            var id = msg.replace(/[^0-9]/g, '');
+            if (id != null)
+            {
+                console.log("repeart : " + id);
+                setTimeout(get_follow, 5000, id); 
+
+                
+            }
+
+        },
+        done: function(msg){ 
+            alert("Đã xong");
+            if (parseFloat(msg)){
+                return false;
+            } else {
+                return true;
+            }
+        }
+    });}
+    </script>
