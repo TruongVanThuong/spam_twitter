@@ -35,6 +35,7 @@
     <?php include ('sidebar.php'); ?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <div class="container-fluid">
@@ -59,16 +60,16 @@
                 <div class="card-body">
                   <div class="form-group">
                     <form id="form_create_group">
-                      <div class="row">
-                        <div class="col-sm-4">
+                      <div class="row" style=" display: flex; justify-content: space-around; ">
+                        <div class="col-sm-5">
 
                           <div class="row">
 
                             <div class="col-sm-12">
                               <div class="row function">
-                                <div class="col-sm-4"><label class="col-sm-12 col-form-label"> Vui lòng tên cấu
+                                <div class="col-sm-8"><label class="col-sm-12 col-form-label" style="padding-left: 0;">Tên cấu
                                     hình</label></div>
-                                <div class="col-sm-8">
+                                <div class="col-sm-12">
                                   <input class="form-control" name="name_group_profile" type="text"
                                     placeholder="Vui lòng nhập tên cấu hình">
                                 </div>
@@ -83,23 +84,23 @@
                                 </div>
                                 <div class="col-sm-6">
                                   <div class="row">
-                                    <div class="col-sm-12">
-                                    <div class="form-group">
-                        <label>Chọn nhóm account</label>
-                        <select class="form-control" name="likes_profile">
-                          <option value="0">Chọn nhóm</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
-                        </select>
-                      </div>
+                                    <div class="col-sm-12" >
+                                    <div class="form-group" style="margin-bottom: 0 !important;">
+                                      <label>Chọn nhóm account</label>
+                                      <select class="form-control" name="likes_profile">
+                                        <option value="0">Chọn nhóm</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                      </select>
+                                      </div>
                                     </div>
                                     
                                   </div>
                                   
                                 </div>
-                                
+
                               </div>
                               <div class="row function">
                                 <div class="col-sm-6">
@@ -122,30 +123,43 @@
 
 
 
-                        <div class="col-sm-4">
-                        <div class="col-sm-12">
-                          <div class="form-group" style="padding-top: 10px;">
-                          <textarea name='following' id="" oninput=""placeholder="Nhập link để follow"></textarea></div>
+                        <!-- <div class="col-sm-4">
+                          <div class="col-sm-12">
+                            <div class="form-group" style="padding-top: 10px;">
+                              <textarea name='following' id="" oninput=""placeholder="Nhập link để follow"></textarea>
+                            </div>
 
-                          <div class="form-group" style="padding-top: 10px;">
-                                                 
-                                                 <!-- <label>Vui lòng nhập link spam</label> -->
-                                                 <textarea name='links' placeholder="Nhập links spam"></textarea>
-                                               </div></div>
-                         
-                        </div>
-                        <div class="col-sm-4">
+                            <div class="form-group" style="padding-top: 10px;">            -->
+                              <!-- <label>Vui lòng nhập link spam</label> -->
+                              <!-- <textarea name='links' placeholder="Nhập links spam"></textarea>
+                            </div>
+                          </div>
+                        </div> -->
+
+
+
+                        <div class="col-sm-5" style="padding-top: 37.5px;">
+                          <div class="col-sm-12" style="display: flex; justify-content: space-between;">
+                            <div class="form-group" style="padding-top: 10px; width: 47.7%; margin-bottom: 0;">
+                              <textarea name='following' id="" oninput=""placeholder="Nhập link để follow"></textarea>
+                            </div>
+
+                            <div class="form-group" style="padding-top: 10px; width: 47.7%; margin-bottom: 0;">           
+                              <!-- <label>Vui lòng nhập link spam</label> -->
+                              <textarea name='links' placeholder="Nhập links spam"></textarea>
+                            </div>
+                          </div>
                           <div class="col-sm-12">
                             <!-- textarea -->
                             <div class="row function">
                             
                                 <div class="col-sm-12"><LABEL>Retweet nhóm account</LABEL>
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-6">
                                   <input class="form-control" type="text" name="num_retweet"
                                     placeholder="S.lượng Retweet/ngày">
                                 </div>
-                                <div class="col-sm-7">
+                                <div class="col-sm-6">
                                 <select class="form-control" name="links_retweet">
                           <option value="0">Chọn nhóm account</option>
                           <option>option 2</option>
@@ -157,7 +171,7 @@
                                 </div>
                               </div>
                           </div>
-                          <div class="row function">
+                          <div class="row function" style="display: inline;">
                   
                           <div class="col-sm-12">
                           <button type="button" class="btn_crete_group_profile btn btn-block bg-gradient-primary btn-lg"
@@ -188,98 +202,104 @@
           </div>
         </div>
         <!--/. container-fluid -->
-    </div>
-  </div>
-  <!-- Default box -->
-  <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">DANH SÁCH GROUP</h3>
-    </div>
-    <!-- /.card-header -->
-    <div class="card-body">
-      <div class="row">
-        <div class="col-sm-8"></div>
-        <div class="col-sm-4"> <button type="button"
-            class="btn_update_group_profile btn btn-block bg-gradient-danger">Update</button> </div>
       </div>
+    </section>
+    <!-- /.content -->
 
-      <table id="example1" class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th style="width: 14%;text-align: center;justify-content: center;">Tên cấu hình</th>
-            <th style="width: 20%;">Following</th>
-            <th style="width: 16%;">Link spam</th>
-            <th> Tags </th>
-            <th>Like</th>
-            <th style="width:100px">Thao tác</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-$c = show_group_profile(1);
-$likes_arr = array();
-while ($row = mysqli_fetch_array($c))
-{
-    $follow_arr = array();
 
-    echo "<tr>";
-    echo "<td>" . $row['name_group'] . "</td>";
-    // $cmd = load_command_group_profile($row['group_id']);
-    // while ($r = mysqli_fetch_array($cmd)){
-    // // var_dump($r);
-    //    switch ($r['command']) {
-    //      case 'follow':
-    //     $follow_arr[] = array("value" => $r['url_link'], "id" => $r['command_id']);
-    //        break;
-    //      case "likes":
-    //     $likes_arr[] = array("value" => $r['url_link'], "id" => $r['command_id']);
-    //      break;
-    //       case "retweet":
-    //      break;
-    //      default:
-    //        # code...
-    //        break;
-    //   }
-    // }
-    echo "<td>";
-    echo "<textarea name='following_links'  id='" . $row['group_id'] . "'></textarea>";
-    echo "</td>";
-    echo "<td>";
-    echo "<textarea name='spammer_links' id='" . $row['group_id'] . "'></textarea>";
-    echo "</td>";
-    echo "<td>";
-    echo "<textarea name='load_tags' id='" . $row['group_id'] . "'></textarea>";
-    echo "</td>";
-    echo "<td>";
-    echo "<textarea name='load_likes' id='" . $row['group_id'] . "'></textarea>";
-    echo "</td>";
-    echo "<td><button id='" . $row['group_id'] . "' style='width: 118px; font-size: 15px;' type='button' class='btn_remove_group btn btn-block bg-gradient-danger btn-sm'>Xoá</button></td>";
-    // $t = load_tags($row['group_id']);
-    // echo "</td>";
-    //       echo "<td>". (!empty($follow_arr))? (json_encode($follow_arr)): 'Không có'."</td>";
-    // echo "</tr>";
     
-}
-?>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th style="width: 14%;text-align: center;justify-content: center;">Tên cấu hình</th>
-            <th style="width: 20%;">Following</th>
-            <th style="width: 16%;">Link spam</th>
-            <th> Tags </th>
-            <th>Like</th>
-            <th style="width:100px">Thao tác</th>
-          </tr>
-        </tfoot>
-      </table>
+    <div class="card" style=" margin: 0 15px !important;">
+        <div class="card-header" style="background: #ffc108;">
+          <h3 class="card-title">DANH SÁCH GROUP</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-10"></div>
+            <div class="col-sm-2 mb-3"> 
+              <button type="button" class="btn_update_group_profile btn btn-block bg-gradient-danger">Update</button> 
+            </div>
+          </div>
+  
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width: 17%; text-align: center;justify-content: center;">Tên cấu hình</th>
+                <th style="width: 20%;">Following</th>
+                <th style="width: 16%;">Link spam</th>
+                <th> Tags </th>
+                <th>Like</th>
+                <th style="width:100px">Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $c = show_group_profile(1);
+                $likes_arr = array();
+                while ($row = mysqli_fetch_array($c))
+                {
+                    $follow_arr = array();
+  
+                  echo "<tr>";
+                  echo "<td>" . $row['name_group'] . "</td>";
+                  // $cmd = load_command_group_profile($row['group_id']);
+                  // while ($r = mysqli_fetch_array($cmd)){
+                  // // var_dump($r);
+                  //    switch ($r['command']) {
+                  //      case 'follow':
+                  //     $follow_arr[] = array("value" => $r['url_link'], "id" => $r['command_id']);
+                  //        break;
+                  //      case "likes":
+                  //     $likes_arr[] = array("value" => $r['url_link'], "id" => $r['command_id']);
+                  //      break;
+                  //       case "retweet":
+                  //      break;
+                  //      default:
+                  //        # code...
+                  //        break;
+                  //   }
+                  // }
+                  echo "<td>";
+                  echo "<textarea name='following_links'  id='" . $row['group_id'] . "'></textarea>";
+                  echo "</td>";
+                  echo "<td>";
+                  echo "<textarea name='spammer_links' id='" . $row['group_id'] . "'></textarea>";
+                  echo "</td>";
+                  echo "<td>";
+                  echo "<textarea name='load_tags' id='" . $row['group_id'] . "'></textarea>";
+                  echo "</td>";
+                  echo "<td>";
+                  echo "<textarea name='load_likes' id='" . $row['group_id'] . "'></textarea>";
+                  echo "</td>";
+                  echo "<td><button id='" . $row['group_id'] . "' style='width: 118px; font-size: 15px;' type='button' class='btn_remove_group btn btn-block bg-gradient-danger btn-sm'>Xoá</button></td>";
+                  // $t = load_tags($row['group_id']);
+                  // echo "</td>";
+                  //       echo "<td>". (!empty($follow_arr))? (json_encode($follow_arr)): 'Không có'."</td>";
+                  // echo "</tr>";
+                  
+                }
+              ?>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th style="width: 14%;text-align: center;justify-content: center;">Tên cấu hình</th>
+                <th style="width: 20%;">Following</th>
+                <th style="width: 16%;">Link spam</th>
+                <th> Tags </th>
+                <th>Like</th>
+                <th style="width:100px">Thao tác</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
     </div>
-    <!-- /.card-body -->
-  </div>
-  <!-- /.card -->
-  </section>
-  <!-- /.content -->
-  </div>
+    </div>
+    <!-- Default box -->
+    
+
   <!-- /.content-wrapper -->
   <?php include ('footer.php'); ?>
   <!--    <script type="text/javascript">
@@ -664,5 +684,20 @@ while ($row = mysqli_fetch_array($c))
       padding-top: calc(.375rem + 1px);
       padding-bottom: calc(.375rem + 1px);
     }
+
+    .tagify.tagify--noTags.tagify--empty {
+      width: 100%;
+      border-radius: 0.25rem;
+    }
+
+
+    .sidebar-mini .wrapper {
+      background: #f4f6f9 !important;
+    }
+
+    .sidebar-mini .wrapper .content-wrapper {
+      padding-bottom: 23px;
+    }
+
 
   </style>
